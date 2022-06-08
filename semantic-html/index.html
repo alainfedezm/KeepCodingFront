@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form example</title>
+</head>
+<body>
+  <form action="/login" method="post" novalidate>
+    <div>
+      <label for="userEmail">email</label>
+      <input type="email" id="userEmail" name="userEmail">
+    </div>
+    <button type="button">show password</button>
+    <div>
+      <label for="userPwd">password</label>
+      <input type="password" id="userPwd" name="password">
+    </div>
+    <hr>
+    <select name="cars" id="cars">
+      <option value="volvo">Volvo 🔍</option>
+      <option value="saab">Saab 💚</option>
+    </select>
+    <hr>
+    <fieldset>
+      <legend>Example:</legend>
+      <div>
+        <label for="name">name</label>
+        <input type="text" id="name" name="name">
+      </div>
+    </fieldset>
+
+    <hr>
+    <fieldset>
+      <legend>Fav programming lang</legend>
+      <label for="javascript">Javascript</label>
+      <input type="radio" name="favProgram" id="javascript">
+      <label for="python">python</label>
+      <input type="radio" name="favProgram" id="python">
+      <label for=".NET">.NET</label>
+      <input type="radio" name="favProgram" id=".NET">
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Vehiculos</legend>
+      <label for="vehicle1">Ihave a bike</label>
+      <input type="checkbox" id="vehicle1" name="vehicle" value="bike">
+      <label for="vehicle2">Ihave a car</label>
+      <input type="email" required id="email" name="email" value="bike">
+
+      <input type="checkbox" id="vehicle2" name="vehicle" value="boat">
+
+    </fieldset>
+
+    <div>
+      <input type="date" id="date" name="date" min="12-04-2022">
+    </div>
+    <input type="submit" value="login">
+
+
+
+    <!--
+      <div>
+        <label for="termsAndCondition">Acepta los terminos</label>
+        <input type="checkbox" id="termsAndCondition">
+      </div>
+    -->
+  </form>
+</body>
+</html>

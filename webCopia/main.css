@@ -1,0 +1,217 @@
+:root {
+	--main-primary-color: #4c4ae6;
+	--main-white-color: #FFF;
+	--footer-padding: 30px 0 30px 0;
+}
+body {
+	font-family: 'Raleway', Helvetica, sans-serif;
+}
+/* --- navbar --- */
+.navbar {
+	background-color: var(--main-primary-color);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+}
+.navbar .img-container img {
+	width: 100%;
+}
+.navbar .img-container {
+	width: 50px;
+}
+.navbar a {
+	color: var(--main-white-color);
+	text-decoration: none;
+	/* Valor fijo mejor no usarlo. Usar flex para alinear */
+	/* padding-top: 20px; */
+}
+/* --- main content --- */
+.main-content {
+	width: 90%;
+	margin: 10px auto;
+	max-width: 920px;
+}
+/* --- footer --- */
+.footer {
+  font-style: italic;
+  text-align: center;
+  background-color: var(--main-primary-color);
+  color: var(--main-white-color);
+	/* margin, padding, border */
+	/* border: 2px solid red; */
+	padding-top: 30px;
+	padding-bottom: 30px;
+	/* atajo 1 */
+	padding: var(--footer-padding);
+	/* atajo 2 */
+	padding: 30px 0;
+	/* ---------- */
+	margin-top: 20px;
+	margin: 20px 0 0 0;
+}
+/* --- show list --- */
+/* 
+  1em -> 16px
+	1rem -> 16px
+	rem -> normalmente para las font-size
+	em -> para espaciados
+*/
+.shows-container h2 {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.shows-container .show-items {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1em;
+	/* solucion con flexbox */
+	/* display: flex;
+	flex-wrap: wrap; */
+	/* justify-content: space-between; */
+}
+
+.show-items .show-item {
+	/* solucion con calc */
+	/* width: calc(50% - 10px);
+	margin-right: 5px; */
+	/* solucion con justify content */
+	/* width: 30%; */
+}
+
+.show-item .image-container {
+	margin-bottom: 10px;
+	max-height: 192px;
+	overflow: hidden;
+}
+
+.shows-container .show-item .image-container img {
+	width: 100%;
+}
+/* -- aside -- */
+.summary {
+	padding: 10px;
+	background-color: rgb(62, 62, 62);
+	color: var(--main-white-color);
+	border-radius: 5px;
+}
+
+.anime-list {
+	margin: 10px 0 20px 0;
+}
+
+.anime-list li {
+	padding: 5px 0;
+}
+
+/* --- media queries --- */
+@media (min-width: 768px) {
+	.content {
+		display: flex;
+		justify-content: space-between;
+	}
+	.aside {
+		width: 15%;
+	}
+	.shows-container {
+		width: 80%;
+	}
+	.shows-container .show-items {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.summary {
+		cursor: pointer;
+	}
+	.summary:hover {
+		background-color: rgb(32, 32, 32);
+	}
+}
+
+@media print {
+	* {
+		color: blue !important;
+	}
+}
+
+.snk-image {
+  animation-name: crazy;
+	animation-duration: 1s;
+	/* animation-iteration-count: infinite; */
+}
+
+@keyframes crazy {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	20% {
+		width: 100px;
+		position: absolute;
+		top: 20px;
+		transform: rotateZ(46deg);
+	}
+	60% {
+		top: 20px;
+		left: 0;
+		transform: rotateZ(-45deg);
+	}
+	100% {
+		left: 500px;
+	}
+}
+/* --- section form --- */
+.section-form {
+  margin-bottom: 20px;
+}
+
+.section-form h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.section-form .input-container {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+	max-width: 400px;
+}
+
+.section-form .input-container .search-label {
+	margin-bottom: 10px;
+}
+
+#search {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.section-form input[type="submit"] {
+	color: var(--main-white-color);
+	background-color: var(--main-primary-color);
+	border: none;
+	border-radius: 5px;
+	box-shadow: none;
+	padding: 10px 12px;
+}
+/* error state */
+.section-form .input-container.error #search {
+	border-color: red;
+}
+
+.error-message {
+	margin-top: 5px;
+	font-size: 0.8rem;
+	display: none;
+}
+
+.section-form .input-container.error .error-message {
+	display: block;
+	color: red;
+}

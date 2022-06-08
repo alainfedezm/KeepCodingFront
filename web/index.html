@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/borrarEstilo.css">
+    <link rel="stylesheet" href="css/style.css">    
+</head>
+<body>
+    <nav class="nav">
+        <div class="img-container"><img src="https://raw.githubusercontent.com/cypress-es/anime-finder/main/src/assets/logo.png" 
+            alt="web page logo"></div>
+        <a href="" class="app-title">Anime Finder</a>
+    </nav>
+
+    <main class="main">
+
+        <!--Form-->
+        <section class="section-form">
+            <form id="search-form" novalidate autocomplete="off">
+              <div class="input-container search">
+                <label class="search-label" for="search">Find your favorite anime</label>
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="search favorite anime"
+                  name = "search"
+                  data-message="this is required"
+                  data-test-id="identificador"
+                  data-random="123456"
+                  placeholder="search favorite anime"
+                  required
+                  >
+                <span id="search-error" class="error-message">Required</span>
+              </div>
+              <input type="submit" value="search">
+            </form>
+        </section>
+        
+        <!--Content-->
+        <section class="content">
+            <aside class="aside">
+                <details close>
+                    <summary class="summary">Animes en emision</summary>
+                    <ul class="anime-list" id="anime-list"></ul>
+                </details>     
+            </aside>
+
+            <!--Lista animes-->
+            <section class="shows-container">
+                <h2>Show list</h2>
+                <section class="show-items" id="main-list-content"></section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">Anime finder inc </footer>
+    <template id="article">
+        <!--img Anime-->
+        <article class="show-item">
+            <figure>
+                    <div class="img-container">
+                        <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx104578-LaZYFkmhinfB.jpg" alt="Attack on Titans season 3 Part 2">
+                        <figcaption>Attack on Titans season 3 Part 2</figcaption>
+                    </div>
+                </figure>
+        </article>
+    </template>
+
+    <script src = js/main.js></script>
+</body>
+</html>

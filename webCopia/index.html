@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with css</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <script>
+    // console.log(fromFile);
+    const input1 = {
+      title: 'javascript course',
+      description: 'basic javascript course',
+      hours: 80,
+      schedule: {
+        module1: 'basic javascript',
+        module2: 'javascript in the browser',
+      },
+    };
+    const foo = (inputValue) => {
+      return {
+        title: inputValue.title,
+        description: inputValue.description,
+      };
+    };
+    const result1 = foo(input1);
+    // console.log(result1);
+  </script>
+  <nav class="navbar" onclick="const variable = 'hola'; console.log(variable);">
+    <div class="img-container">
+      <img
+        src="https://raw.githubusercontent.com/cypress-es/anime-finder/main/src/assets/logo.png"
+        alt="logo"
+      >
+    </div>
+    <a class="app-title" href="/">
+      Anime finder
+    </a>
+  </nav>
+  <main class="main-content">
+    <section class="section-form">
+      <h1>Find your favorite anime</h1>
+      <form id="search-form" novalidate autocomplete="off">
+        <div class="input-container search">
+          <label class="search-label" for="search">Search</label>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            data-message="this is required"
+            data-testid="identificador"
+            data-random="123456"
+            placeholder="search favorite anime"
+            required
+          >
+          <span
+            id="search-error"
+            class="error-message"
+          >Required</span>
+        </div>
+        <input type="submit" value="search">
+      </form>
+    </section>
+    <section class="content">
+      <aside class="aside">
+        <details open>
+          <summary class="summary">
+            Animes en emision
+          </summary>
+          <ul
+            id="anime-list"
+            class="anime-list"
+          >
+          </ul>
+        </details>
+      </aside>
+      <section class="shows-container">
+        <h2>Show List</h2>
+        <div id="main-list-content" class="show-items">
+          
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+    anime finder Inc.
+  </footer>
+  <template id="article">
+    <article class="show-item">
+      <figure>
+        <div class="image-container">
+          <img
+            src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx104578-LaZYFkmhinfB.jpg"
+            alt="Attack on Titan Season 3 Part 2"
+            title="Attack on Titan Season 3 Part 2"
+          />
+        </div>
+        <figcaption>Attack on Titan Season 3 Part 2</figcaption>
+      </figure>
+    </article>
+  </template>
+  <script src="main.js"></script>
+</body>
+</html>

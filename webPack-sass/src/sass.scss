@@ -1,0 +1,94 @@
+/*Comentario*/
+$primary-color : #333;
+$font-stack : Helvetica, sans-serif;
+
+body{
+    font-family: $font-stack;
+}
+//funciones
+@function calculateRem($size){
+    $remSize : $size / 16;
+    @return #{$remSize}rem;
+}
+
+//nesting
+.navbar {
+    display: fixed;
+    ul{
+        list-style:none;
+        margin:0;
+        li{
+            padding:10px;
+        }
+    }
+    &.open{
+        display:block;
+    }
+    
+    a{
+        text-decoration: none;
+        &:hover{
+            color:blue;
+            margin:calculateRem(16);
+        }
+    }
+    >div{
+        background-color:black;
+    }
+}
+
+$sizes: 40,50,80;
+@each $size in $sizes{
+    .icon-{
+        font-size: $size +px;
+    }
+}
+
+//mixin y extend
+@mixin theme($themeColor){
+    background-color:$themeColor;
+    border-color:$themeColor;
+    box-shadow: 0 0 qpx rgba($themeColor,0.25);
+}
+
+.content{
+    @include theme(red);
+    &:hover{
+        @include theme(black)
+    }
+}
+
+
+%flex-clasic{
+    display:flex;
+    justify-content: spcae-between;
+    align-items:center;
+}
+
+.container{
+    @extend %flex-clasic;
+}
+
+@mixin tablet{
+    @media(min-width: 760px){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media(min-width: 760px){
+        @content;
+    }
+}
+
+
+.footer{
+    text-align:center;
+    @include tablet{
+        text-align:left;
+    }
+    
+    @include desktop{
+        display:none;
+    }
+}
